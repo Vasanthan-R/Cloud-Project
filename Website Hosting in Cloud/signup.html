@@ -1,0 +1,212 @@
+<html>
+<style>
+input[type=text], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+</style>
+
+<head>
+    <title>Sign up</title>
+</head>
+<body background="bb.jpg">
+<center>
+<b>
+<font size="8" color="red">ENTER YOUR DETAILS</font>
+</center>
+
+<style>
+.button
+{
+background-color:red;
+border:none;
+color:white;
+padding:15px 32px;
+text-align:center;
+text-decoration:none;
+display:inlne-block;
+font size=16px;
+margin:4px 2px;
+cursor:pointer;
+}
+
+
+</style>
+    <form name="signup" method="POST" action="sign_up.jsp" onsubmit="return validate()">
+<pre>
+<font size="5" color="black">
+
+      FIRST NAME:        <input type="text" name="f" id="firstname"><br>
+      
+      LAST NAME:         <input type="text" name="l"id="lastname"><br>
+      
+      GENDER:            <input type="radio" name="g" value="Male">Male
+                         <input type="radio" name="g" value="Female">Female
+                       
+                        
+      AGE:              <input type="text" name="age"><br> 
+      
+      MOBILE NUMBER:    <input type="text" name="m" id="mobileno"><br>
+      
+      EMAILID:          <input type="text" name="e" id="emailid"><br>
+      
+      USERNAME:         <input type="text" name="u" id="username"><br>
+      
+      PASSWORD:         <input type="password" name="p" id="password"><br>
+      
+      CONFIRM PASSWORD: <input type="password" name="cp" id="confirmpassword"><br>
+      
+      COLLEGE:          <input type="text" name="edu"><br>
+
+      DEPARTMENT:       <select name="med">
+                        <option value="IT">IT</option>
+                        <option value="ECE">ECE</option>
+						<option value="CSE">CSE</option>
+                        <option value="EEE">EEE</option>
+                        </select>
+
+      YEAR:             <select name="std">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        </select>
+
+     ADDRESS:           <textarea type="text" name="add" rows="5" cols="50"> </textarea>
+
+     PINCODE:          <input type="text" name="pin" id="pincode">
+        
+        <input type="submit" class="button"  value="Submit">
+    </form>
+    <script>
+            function validate()
+
+                {
+                    var firstname=document.getElementById("firstname");
+                    var lastname=document.getElementById("lastname");
+                    var username=document.getElementById("username");
+                    var password=document.getElementById("password");
+                    var confirmpassword=document.getElementById("confirmpassword");
+                    var mobileno=document.getElementById("mobileno");
+                       var emailid=document.getElementById("emailid");
+                    var letters= /^[A-Za-z]+$/;
+                    var numbers= /^[0-9]+$/;
+                    var letternum=/^[A-Za-z0-9_@]+$/;
+                    var mailcheck = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                    username_len=username.value.length;
+                    password_len=password.value.length;
+                    mobileno_len=mobileno.value.length;
+                    if(firstname.value.match(letters))
+                    {
+                        
+                    }
+                    else
+                    {
+                        alert("enter a valid first name");
+                        return false;
+                    }
+                    if(lastname.value.match(letters))
+                    {
+                        
+                    }
+                    else
+                    {
+                        alert("enter a valid last name");
+                        return false;
+                    }
+                    if(username_len!=0 && username_len>=7)
+                    {
+                    if(username.value.match(letternum))
+                    {
+
+                    }
+                    else
+                    {
+                        alert("user name can only have alphabets numbers at symbol and underscore.");
+                        return false;
+                    }
+                    }
+                    else
+                    {
+                        alert("user name canot be zero or less than 7");
+                        return false;
+                    }
+                    if(password_len!=0 && password_len>=7)
+                    {
+                         if(password.value.match(letternum))
+                         {
+
+                         }
+                        else
+                        {
+                            alert("password can only have alphabets numbers at symbol and underscore.");
+                            return false;
+                         }
+                    }
+                    else
+                    {
+                        alert("password canot be zero or less than 7");
+                        return false;
+                        
+                    }
+                    if(password.value==confirmpassword.value)
+                    {
+
+                    }
+                    else
+                    {
+                        alert("give the same password as that of in password textbox in the confirm password textbox");
+                        return false;
+                    }
+                    
+                    if(mobileno_len!=0 && mobileno_len==10)
+                    {
+                    
+                    }
+                    else
+                    {
+                        alert("mobile number canot be zero or should be equal to 10 digit.");
+                        return false;
+                        
+                    }
+                    if(emailid.value.match(mailcheck))
+                    {
+
+                    }
+                    else
+                    {
+                        alert("enter a valid email ID");
+                        return false;
+                    }
+                return true;
+
+                }
+                   
+                
+ 
+        </script>
+</body>
+
+
+</html>
